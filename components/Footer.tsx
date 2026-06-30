@@ -1,89 +1,130 @@
 "use client";
 
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="bg-black text-white">
 
-      <div className="max-w-7xl mx-auto px-8 py-24">
+      <div className="max-w-7xl mx-auto px-5 md:px-8 py-20">
 
-        <div className="grid lg:grid-cols-4 gap-14">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+
+          {/* Brand */}
 
           <div>
 
-            <h2 className="text-3xl font-bold">
+            <h2 className="text-2xl font-bold">
+
               Divine Architects
+
             </h2>
+
+            <p className="text-neutral-500 mt-2">
+
+              Architecture • Interiors • Commercial Spaces
+
+            </p>
 
             <p className="text-neutral-400 leading-8 mt-6">
 
-              Creating timeless residential, commercial and interior
-              spaces through thoughtful planning, refined aesthetics
-              and functional design.
+              Designing timeless spaces through thoughtful planning,
+              refined aesthetics and functional excellence.
 
             </p>
 
           </div>
 
+          {/* Navigation */}
+
           <div>
 
-            <h3 className="text-xl font-semibold mb-6">
-              Quick Links
+            <h3 className="text-lg font-semibold mb-6">
+
+              Navigation
+
             </h3>
 
             <ul className="space-y-4 text-neutral-400">
 
-              <li>Home</li>
-              <li>Portfolio</li>
-              <li>Services</li>
-              <li>About</li>
-              <li>Contact</li>
+              <li><Link href="/" className="hover:text-white transition">Home</Link></li>
+
+              <li><Link href="/about" className="hover:text-white transition">About</Link></li>
+
+              <li><Link href="/services" className="hover:text-white transition">Services</Link></li>
+
+              <li><Link href="/portfolio" className="hover:text-white transition">Portfolio</Link></li>
+
+              <li><Link href="/youtube" className="hover:text-white transition">YouTube</Link></li>
+
+              <li><Link href="/contact" className="hover:text-white transition">Contact</Link></li>
 
             </ul>
 
           </div>
 
+          {/* Services */}
+
           <div>
 
-            <h3 className="text-xl font-semibold mb-6">
+            <h3 className="text-lg font-semibold mb-6">
+
               Services
+
             </h3>
 
             <ul className="space-y-4 text-neutral-400">
 
-              <li>Architecture</li>
+              <li>Residential Architecture</li>
+
+              <li>Commercial Architecture</li>
+
               <li>Interior Design</li>
-              <li>Commercial Design</li>
+
               <li>3D Visualization</li>
+
               <li>Construction Drawings</li>
 
             </ul>
 
           </div>
 
+          {/* Contact */}
+
           <div>
 
-            <h3 className="text-xl font-semibold mb-6">
+            <h3 className="text-lg font-semibold mb-6">
+
               Contact
+
             </h3>
 
             <p className="text-neutral-400">
-              📍 Lucknow, Uttar Pradesh
+
+              📍 Lucknow, Uttar Pradesh, India
+
             </p>
 
             <p className="text-neutral-400 mt-4">
+
               📞 +91 8840828349
+
             </p>
 
-            <p className="text-neutral-400 mt-4 break-all">
-              ✉ divinearchitects0@gmail.com
-            </p>
+            <a
+              href="mailto:divinearchitects0@gmail.com"
+              className="block text-neutral-400 hover:text-white transition mt-4 break-all"
+            >
+              ✉️ divinearchitects0@gmail.com
+            </a>
 
-            <div className="flex gap-4 mt-8">
+            <div className="flex flex-wrap gap-3 mt-8">
 
               <a
                 href="https://www.instagram.com/_divine_architects_/"
                 target="_blank"
-                className="border border-neutral-700 px-5 py-3 rounded-full hover:bg-white hover:text-black transition"
+                rel="noopener noreferrer"
+                className="px-5 py-2 border border-neutral-700 rounded-full hover:bg-white hover:text-black transition"
               >
                 Instagram
               </a>
@@ -91,7 +132,8 @@ export default function Footer() {
               <a
                 href="https://www.youtube.com/@DivineArchitects-DVA"
                 target="_blank"
-                className="border border-neutral-700 px-5 py-3 rounded-full hover:bg-white hover:text-black transition"
+                rel="noopener noreferrer"
+                className="px-5 py-2 border border-neutral-700 rounded-full hover:bg-white hover:text-black transition"
               >
                 YouTube
               </a>
@@ -102,14 +144,18 @@ export default function Footer() {
 
         </div>
 
-        <div className="border-t border-neutral-800 mt-20 pt-8 flex flex-col md:flex-row justify-between gap-6 text-neutral-500">
+        <div className="border-t border-neutral-800 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-neutral-500">
 
           <p>
-            © 2026 Divine Architects. All Rights Reserved.
+
+            © {new Date().getFullYear()} Divine Architects. All Rights Reserved.
+
           </p>
 
           <p>
-            Designed by Divine Architects
+
+            Designed & Developed by Divine Architects
+
           </p>
 
         </div>

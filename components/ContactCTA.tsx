@@ -2,15 +2,15 @@
 
 export default function ContactCTA() {
   return (
-    <section className="bg-neutral-950 text-white py-32">
+    <section className="bg-neutral-950 text-white py-24 md:py-32">
 
-      <div className="max-w-6xl mx-auto px-8 text-center">
+      <div className="max-w-5xl mx-auto px-6 text-center">
 
-        <p className="uppercase tracking-[8px] text-neutral-400 mb-5">
+        <p className="uppercase tracking-[8px] text-neutral-400 text-xs md:text-sm mb-5">
           Let's Work Together
         </p>
 
-        <h2 className="text-5xl md:text-7xl font-bold leading-tight">
+        <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold leading-tight">
 
           Let's Design
           <br />
@@ -22,7 +22,7 @@ export default function ContactCTA() {
 
         </h2>
 
-        <p className="text-neutral-400 text-lg leading-9 mt-10 max-w-3xl mx-auto">
+        <p className="text-neutral-400 text-base md:text-lg leading-8 md:leading-9 mt-10 max-w-3xl mx-auto">
 
           Whether you're planning a residence, commercial development,
           café, office, retail space, hospitality project or interior
@@ -30,11 +30,12 @@ export default function ContactCTA() {
 
         </p>
 
-        <div className="flex flex-wrap justify-center gap-6 mt-16">
+        <div className="flex flex-col sm:flex-row justify-center gap-5 mt-14">
 
           <a
             href="https://wa.me/918840828349"
             target="_blank"
+            rel="noopener noreferrer"
             className="bg-white text-black px-10 py-5 rounded-full font-semibold hover:bg-neutral-200 transition"
           >
             WhatsApp Us
@@ -46,46 +47,6 @@ export default function ContactCTA() {
           >
             Email Us
           </a>
-
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-10 mt-24 text-left">
-
-          <div>
-
-            <h3 className="text-xl font-semibold mb-4">
-              Call
-            </h3>
-
-            <p className="text-neutral-400">
-              +91 88408 28349
-            </p>
-
-          </div>
-
-          <div>
-
-            <h3 className="text-xl font-semibold mb-4">
-              Email
-            </h3>
-
-            <p className="text-neutral-400 break-all">
-              divinearchitects0@gmail.com
-            </p>
-
-          </div>
-
-          <div>
-
-            <h3 className="text-xl font-semibold mb-4">
-              Office
-            </h3>
-
-            <p className="text-neutral-400">
-              Lucknow, Uttar Pradesh, India
-            </p>
-
-          </div>
 
         </div>
 

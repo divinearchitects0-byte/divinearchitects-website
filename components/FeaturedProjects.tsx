@@ -1,106 +1,134 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 const projects = [
   {
     title: "Luxury Classical Residence",
     category: "Residential Architecture",
     image: "/images/architecture/villa1.jpg",
+    description:
+      "Elegant classical architecture blended with modern planning and luxurious living.",
   },
   {
     title: "Modern Residence",
     category: "Architecture",
     image: "/images/architecture/villa2.jpg",
+    description:
+      "Contemporary architecture focused on light, openness and timeless aesthetics.",
   },
   {
     title: "Contemporary Row House",
     category: "Residential Design",
     image: "/images/architecture/rowhouse1.jpg",
+    description:
+      "Smart planning for compact plots without compromising space or comfort.",
   },
   {
-    title: "Interior Design",
-    category: "Interior",
-    image: "/images/interiors/interior1.jpg",
+    title: "Luxury Interior",
+    category: "Interior Design",
+    image: "/images/interiors/bedroom1.jpg",
+    description:
+      "Premium interiors designed with elegance, warmth and functionality.",
   },
 ];
 
 export default function FeaturedProjects() {
   return (
-    <section className="bg-white py-36">
+    <section className="py-20 md:py-28 bg-white">
 
-      <div className="max-w-7xl mx-auto px-8">
+      <div className="max-w-7xl mx-auto px-5 md:px-8">
 
-        <div className="mb-24">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-14">
 
-          <p className="uppercase tracking-[8px] text-neutral-500 mb-4">
-            Selected Projects
+          <div>
+
+            <p className="uppercase tracking-[6px] text-neutral-500 text-xs mb-3">
+              Selected Projects
+            </p>
+
+            <h2 className="text-4xl md:text-6xl font-bold leading-tight">
+              Architecture that
+              <br />
+              tells a story.
+            </h2>
+
+          </div>
+
+          <p className="text-neutral-600 text-lg max-w-md mt-6 lg:mt-0 leading-8">
+            Every project reflects our commitment to thoughtful planning,
+            timeless design and exceptional craftsmanship.
           </p>
-
-          <h2 className="text-6xl font-bold max-w-4xl">
-            Architecture that
-            <br />
-            tells a story.
-          </h2>
 
         </div>
 
-        <div className="space-y-24">
+        {/* 2x2 Grid */}
 
-          {projects.map((project, index) => (
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+          {projects.map((project) => (
 
             <div
               key={project.title}
-              className={`grid lg:grid-cols-2 gap-14 items-center ${
-                index % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""
-              }`}
+              className="group bg-white rounded-[28px] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
             >
 
-              <div className="relative h-[650px] rounded-[40px] overflow-hidden">
+              <div className="relative aspect-video overflow-hidden">
 
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover hover:scale-105 transition duration-700"
+                  sizes="(max-width:1024px) 100vw, 50vw"
+                  className="object-cover transition duration-700 group-hover:scale-105"
                 />
 
               </div>
 
-              <div>
+              <div className="p-7 md:p-8">
 
-                <p className="uppercase tracking-[6px] text-neutral-500">
+                <p className="uppercase tracking-[5px] text-[11px] text-neutral-500 mb-3">
 
                   {project.category}
 
                 </p>
 
-                <h3 className="text-5xl font-bold mt-6">
+                <h3 className="text-2xl md:text-4xl font-bold">
 
                   {project.title}
 
                 </h3>
 
-                <p className="text-neutral-600 leading-9 mt-8 text-lg">
+                <p className="text-neutral-600 mt-4 leading-7">
 
-                  Every project is approached with a balance of
-                  creativity, functionality and timeless aesthetics,
-                  ensuring spaces that remain relevant for years to
-                  come.
+                  {project.description}
 
                 </p>
 
-                <button className="mt-12 bg-black text-white px-10 py-5 rounded-full hover:bg-neutral-800 transition">
-
-                  View Project
-
-                </button>
+                <Link
+                  href="/portfolio"
+                  className="inline-flex items-center gap-2 mt-7 px-6 py-3 rounded-full bg-black text-white hover:bg-neutral-800 transition"
+                >
+                  View Project →
+                </Link>
 
               </div>
 
             </div>
 
           ))}
+
+        </div>
+
+        <div className="text-center mt-16">
+
+          <Link
+            href="/portfolio"
+            className="inline-flex items-center gap-2 border border-black px-10 py-4 rounded-full hover:bg-black hover:text-white transition"
+          >
+            View All Projects →
+          </Link>
 
         </div>
 
