@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Manrope } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -78,8 +79,9 @@ export const metadata: Metadata = {
   openGraph: {
     title:
       "Divine Architects | Luxury Architecture & Interior Design Studio",
+
     description:
-      "Luxury residences, villas, row houses, interiors, commercial architecture and 3D visualization by Divine Architects.",
+      "Luxury residences, interiors, commercial architecture and 3D visualization by Divine Architects.",
 
     url: "https://divinearchitects.co.in",
 
@@ -131,6 +133,8 @@ export default function RootLayout({
       <body className={`${playfair.variable} ${manrope.variable}`}>
         {children}
       </body>
+
+      <GoogleAnalytics gaId="G-2579REPVPD" />
     </html>
   );
 }
