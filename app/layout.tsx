@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Manrope } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import FloatingContact from "@/components/FloatingContact";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -132,6 +133,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${playfair.variable} ${manrope.variable}`}>
         {children}
+
+        <FloatingContact />
       </body>
 
       <GoogleAnalytics gaId="G-2579REPVPD" />
